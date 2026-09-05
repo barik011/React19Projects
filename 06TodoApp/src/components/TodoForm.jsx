@@ -10,8 +10,8 @@ function TodoForm() {
         e.preventDefault();
 
         if(!todo) return
-
-        addTodo({id:Date.now(),todo:todo,isComplete:false})
+        addTodo({id:Date.now(),todo:todo,isComplete:false});
+        setTodo("");
     }
 
     return (
