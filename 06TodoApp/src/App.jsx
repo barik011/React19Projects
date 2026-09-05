@@ -9,6 +9,7 @@ function App() {
 
   const addTodo = (todo) =>{
     setTodos((prev)=>[{id:Date.now(),...todo},...prev]);
+    console.log(todo)
   }
 
   const updateTodo =(id,todo)=>{
@@ -28,7 +29,7 @@ function App() {
     if(todoLocalList && todoLocalList.length >0){
       setTodos(todoLocalList);
     }
-  })
+  },[])
   useEffect(()=>{
     localStorage.setItem('todoList',JSON.stringify(todos))
   },[todos])
@@ -42,7 +43,14 @@ function App() {
                        <TodoForm />
                     </div>
                     <div className="flex flex-wrap gap-y-3">
-                        <TodoList />
+                      {
+                        todos.map((todo)=>(
+                          <div className='w-full' key={todo.id}>
+                              <TodoList todo={todo}/>
+                          </div>
+                        ))
+                      }
+                        
                     </div>
                 </div>
             </div>
