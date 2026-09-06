@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../src/features/todo/todoSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTodo,updateTodo } from '../src/features/todo/todoSlice';
 
 function TodoForm() {
     const [input,setInput] =useState('');
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const editTodo = useSelector((state)=>(state.editTodo))
     const onAddTodoHandler = (e) => {
         e.preventDefault();
         dispatch(addTodo(input));
         setInput('');
     }
 
+    useEffect(()=>{
+          if (editTodo) {
+    setInput(editTodo.title)
+  }
+}, [editTodo])
   return (
     <form onSubmit={onAddTodoHandler} className="space-x-3 mt-12">
       <input
