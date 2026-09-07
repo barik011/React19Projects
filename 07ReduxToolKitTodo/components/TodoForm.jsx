@@ -5,12 +5,19 @@ import { addTodo,updateTodo } from '../src/features/todo/todoSlice';
 
 function TodoForm() {
     const [input,setInput] =useState('');
+
     const dispatch = useDispatch();
     const editTodo = useSelector((state)=>(state.editTodo))
     const onAddTodoHandler = (e) => {
         e.preventDefault();
+        if(editTodo){
+            dispatch(updateTodo({id:editTodo.id,title:input}));
+            setInput('');
+        }
+        else{
         dispatch(addTodo(input));
         setInput('');
+        }
     }
 
     useEffect(()=>{
@@ -31,7 +38,7 @@ function TodoForm() {
         type="submit"
         className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
       >
-        Add Todo
+        {editTodo?'Update Todo':'Add Todo'}
       </button>
     </form>
   )

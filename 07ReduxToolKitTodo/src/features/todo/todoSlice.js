@@ -23,10 +23,9 @@ export const todoSlice = createSlice({
             state.editTodo = action.payload
         },
         updateTodo:(state,action)=>{
-            const todo = {
-                title:action.payload
-            }
-            state.todos.push(todo);
+            const index = state.todos.findIndex((todo)=>todo.id===action.payload.id)
+            state.todos[index]=action.payload
+            state.editTodo=null;
         },
     }
 })
