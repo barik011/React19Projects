@@ -22,7 +22,7 @@ export class AuthServ {
                 return userAccount;
             }
         } catch (error) {
-            //console.log("Create Account Method Error: ", error);
+            console.log("Create Account Method Error: ", error);
         }
 
     }
