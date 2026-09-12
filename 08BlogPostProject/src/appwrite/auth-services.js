@@ -33,11 +33,11 @@ export class AuthServ {
         } catch (error) {
             console.log("Login Method Error: ", error)
         }
-
     }
     async getCurrentUser(){
         try {
-            const session = await this.account.get()
+            const userData = await this.account.get();
+            return userData;
         } catch (error) {
             console.log("getCurrentUser Method Error: ", error)
         }
