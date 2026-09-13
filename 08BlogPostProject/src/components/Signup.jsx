@@ -53,14 +53,22 @@ const Signup = () => {
               placeholder="Enter Full Name"
               {...register("name",{required:true})}
               />
-            </div>
-            <div className='space-y-5'>
+            
               <Input 
               type="text"
               label="email:"
               placeholder="Enter email"
               {...register("email",{required:true})}
               />
+              <Input 
+              type="password"
+              label="password:"
+              placeholder="Enter password"
+              {...register("password",{required:true})}
+              />
+               <Button type="submit" className="w-full">
+                  Create Account
+               </Button>
             </div>
           </form>
       </div>
