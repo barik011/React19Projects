@@ -1,7 +1,7 @@
 import React from 'react'
 import appwriteAuthServ from '../appwrite/auth-services'
 import {useDispatch} from 'react-redux'
-import {login as authLogin, login, logout} from '../store/authSlice'
+import {login as authLogin, logout} from '../store/authSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import {Input,Button,Logo} from '../components'
 import {useForm} from 'react-hook-form'
@@ -51,10 +51,10 @@ const Login = () => {
         <form  onSubmit={handleSubmit(LoginForm)} className='mt-4'>
             <div className='space-y-5'>
                 <Input
-                label="Username:"
+                label="email:"
                 type="text"
-                placeholder="Enter Username"
-                {...register("username", {
+                placeholder="Enter email"
+                {...register("email", {
                     required:true,
                     validate:{
                         matchPattern:(value)=>/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Username must be email address"
