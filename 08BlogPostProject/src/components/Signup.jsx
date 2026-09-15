@@ -1,5 +1,5 @@
 import React from 'react'
-import {authServ} from '../appwrite/auth-services'
+import authServ from '../appwrite/auth-services'
 import {login,logout} from '../store/authSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import {useDispatch} from 'react-redux'
@@ -42,7 +42,7 @@ const Signup = () => {
           <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
            <p className="mt-2 text-center text-base text-black/60">
            Already have an account?
-           <link to="/login" className="font-medium text-primary transition-all duration-200 hover:underline">Sign In</link>
+           <Link to="/login" className="font-medium text-primary transition-all duration-200 hover:underline">Sign In</Link>
            </p>
            {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
           <form onSubmit={handleSubmit(SignupForm)} className='mt-4'>

@@ -3,7 +3,7 @@ import authServ from '../../appwrite/auth-services'
 import { useDispatch } from 'react-redux'
 import { logout } from '../../store/authSlice'
 
-function logoutBtn() {
+function LogoutBtn() {
 
     const dispatch = useDispatch()
 
@@ -21,4 +21,4 @@ function logoutBtn() {
   )
 }
 
-export default logoutBtn
+export default LogoutBtn
