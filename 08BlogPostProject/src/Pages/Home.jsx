@@ -6,7 +6,7 @@ const Home = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(()=>{
-        aapwriteServ.getPost().then((posts)=>{
+        aapwriteServ.getActivePosts().then((posts)=>{
             if(posts){
                 setPosts(posts.documents)
             }

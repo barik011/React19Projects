@@ -33,7 +33,7 @@ export class blogServices {
     }
     async updatePost(slug,{title,content,featuredImage,status}){
         try {
-            await this.databases.updateDocument(
+            return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug,
@@ -75,6 +75,7 @@ export class blogServices {
             return false;
         }
     }
+
     async getActivePosts(queries=[Query.equal('status','active')]){
         try {
            return await this.databases.listDocuments(
@@ -88,10 +89,12 @@ export class blogServices {
             return false;
         }
     }
+    
+// file upload service
 
     async fileUpload(file){
         try {
-            await this.storage.createFile(
+            return await this.storage.createFile(
                 conf.appwriteBuckId,
                 ID.unique(),
                 file
@@ -107,6 +110,7 @@ export class blogServices {
                 conf.appwriteBuckId,
                 fileId
             )
+            return true;
         } catch (error) {
             console.log("Appwrite::Config::deleteFile Method Error: ", error);
             return false;
@@ -114,7 +118,7 @@ export class blogServices {
     }
     async filePreview(fileId){
         try {
-            await this.storage.getFilePreview(
+            return await this.storage.getFilePreview(
                 conf.appwriteBuckId,
                 fileId
             )

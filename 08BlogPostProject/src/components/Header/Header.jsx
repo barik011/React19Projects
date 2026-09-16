@@ -38,13 +38,13 @@ function Header() {
     ]
 
     return (
-        <div className='w-full flex justify-between items-center p-4 bg-gray-700'>
+        <div className='py-3 shadow bg-gray-500'>
             <Container>
                 <nav className='flex justify-between items-center'>
-                    <div className='flex mr-3'>
+                    <div className='mr-3'>
                         <Logo width="100px" />
                     </div>
-                    <ul className='flex'>
+                    <ul className='flex ml-auto'>
                         {menuItems.map((item)=>
                             item.status ? 
                                <li className='p-2' key={item.name}>

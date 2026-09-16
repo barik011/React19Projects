@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 export default function Protected ({children,authentication=true}) {
@@ -7,7 +7,7 @@ export default function Protected ({children,authentication=true}) {
     const [loader,setLoader] = useState(true)
     const authStatus = useSelector((state)=>(state.auth.status))
 
-    useeffect(()=> {
+    useEffect(()=> {
         //SIMPLE WAY TO CHECK FROM Auth Service
         // if(authStatus==true){
         //     navigate('/');

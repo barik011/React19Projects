@@ -36,8 +36,8 @@ export class AuthServ {
     }
     async getCurrentUser(){
         try {
-            const userData = await this.account.get();
-            return userData;
+             return await this.account.get();
+             
         } catch (error) {
             console.log("getCurrentUser Method Error: ", error)
         }
