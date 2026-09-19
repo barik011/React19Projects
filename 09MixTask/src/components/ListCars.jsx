@@ -13,9 +13,9 @@ const ListCars = () => {
       carmodel: carModel.trim()
     }
     if (newCar.year != null &&  newCar.carmade.trim()  != "" && newCar.carmodel.trim()  !="" ) {
-      setCars(c => [...c, newCar])
-
       localStorage.setItem('carsStore', JSON.stringify(cars))
+      setCars(c => [...c, newCar])
+      
     }
     setYear(new Date().getFullYear());
     setCarMade('');
@@ -31,6 +31,10 @@ const ListCars = () => {
   }
   const onModelHandler = (e) => {
     setcarModel(e.target.value)
+  }
+
+  const onClearHandler=()=>{
+    setCars(localStorage.removeItem('carsStore'))
   }
   return (
     
@@ -48,6 +52,7 @@ const ListCars = () => {
             <input className="border w-1/2" type="text" value={carMade} onChange={onMadeHandler} placeholder="Enter made by" />
             <input className="border w-1/2" type="text" value={carModel} onChange={onModelHandler} placeholder="Enter modal name" />
             <button className="w-36 bg-amber-700 border-0 cursor-pointer text-white font-bold rounded-md" onClick={onAddHandler}>Add Car</button>
+            <button className="w-26 bg-amber-700 border-0 cursor-pointer text-white font-bold rounded-md" onClick={onClearHandler}>Clear </button>
             </div>
           </div>
         </>
