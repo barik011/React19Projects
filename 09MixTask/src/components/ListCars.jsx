@@ -35,7 +35,7 @@ const ListCars = () => {
   return (
     
         <>
-          <div className="w-1/2 h-1/2 border min-h-80 p-2 flex flex-col">
+          <div className="border min-h-80 p-2 flex flex-col">
             <h2 className="text-2xl  font-bold">List of Cars Types</h2>
             <ul className='h-10'>
               {

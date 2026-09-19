@@ -52,7 +52,7 @@ const TodoList = () => {
     }
 
     return (
-        <div className="w-1/2 h-1/2 border min-h-80 p-2 flex flex-col justify-start">
+        <div className="border min-h-80 p-2 flex flex-col">
             <h1 className="text-2xl font-bold mb-2">Todo List with Move Activity</h1>
             <div className="mb-2 w-2xl">
                 <input type='text' value={newTask} onChange={addTask}
