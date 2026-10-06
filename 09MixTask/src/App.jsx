@@ -2,6 +2,7 @@ import React from 'react'
 import ListCars from './components/ListCars'
 import TodoList from './components/TodoList'
 import DigitalClock from './components/DigitalClock'
+import BgChanger from './components/BgChanger'
 function App() {
 
 
@@ -20,7 +21,9 @@ function App() {
       <div className="w-1/2 h-1/2">
           <DigitalClock />
       </div>
-      <div className="w-1/2 h-1/2 ">DDDDDDDDDDDDDD</div>
+      <div className="w-1/2 h-1/2 ">
+      <BgChanger />
+      </div>
     </div>
     </div>
   )

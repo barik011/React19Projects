@@ -1,0 +1,19 @@
+{
+    "tailwindcss-intellisense.trace.server": "messages",
+    "tailwindCSS.emmetCompletions": true,
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "tailwindCSS.experimental.configFile": {
+        "01PasswordCreate/src/index.css": "01PasswordCreate/**",
+        "02CurrencyCovertor/src/index.css": "02CurrencyCovertor/**",
+        "03ReactRouter/src/index.css": "03ReactRouter/**",
+        "04ContextAPI/src/index.css": "04ContextAPI/**",
+        "05ThemeSwitch/src/index.css": "05ThemeSwitch/**",
+        "06TodoApp/src/index.css": "06TodoApp/**",
+        "07ReduxToolKitTodo/src/index.css": "07ReduxToolKitTodo/**",
+        "08BlogPostProject/src/index.css": "08BlogPostProject/**",
+        "09MixTask/src/index.css": "09MixTask/**",
+        "CodeStep01/src/index.css": "CodeStep01/**"
+    }
+}

@@ -13,14 +13,14 @@ const ListCars = () => {
       carmodel: carModel.trim()
     }
     if (newCar.year != null &&  newCar.carmade.trim()  != "" && newCar.carmodel.trim()  !="" ) {
-      localStorage.setItem('carsStore', JSON.stringify(cars))
       setCars(c => [...c, newCar])
       
     }
+    localStorage.setItem('carsStore', JSON.stringify(cars))
+    console.log(cars)
     setYear(new Date().getFullYear());
     setCarMade('');
     setcarModel('');
-
   }
   const carsData = JSON.parse(localStorage.getItem('carsStore'))
   const onYearHandler = (e) => {

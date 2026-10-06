@@ -6,6 +6,7 @@ const Password = () => {
   const [allowedNumbers, setAllowedNumbers] = useState(false);
   const [allowedSymbols, setAllowedSymbols] = useState(false);
   const [password, setPassword] = useState("Password");
+  const [copied, setCopied] = useState(false);
 
   const inputRef = useRef(null);
   const passwordGenerator = useCallback( () =>{
@@ -22,13 +23,15 @@ const Password = () => {
   },[lenght, allowedNumbers, allowedSymbols]);
 
 const inputTextCopyHandler = useCallback(() => {
-    //window.navigator.clipboard.writeText(password);
+    window.navigator.clipboard.writeText(password);
     inputRef.current.select();
-    inputRef.current?.setSelectionRange(0,20);
+    inputRef.current?.setSelectionRange(0,12);
+    setCopied(true);
 },[lenght, allowedNumbers, allowedSymbols,setPassword])
 
   useEffect(() => {
     passwordGenerator();
+    setCopied(false);
   }, [lenght, allowedNumbers, allowedSymbols]);
   return (
     <>
@@ -42,8 +45,8 @@ const inputTextCopyHandler = useCallback(() => {
             readOnly
             ref={inputRef}
           />
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-r-2xl" onClick={inputTextCopyHandler}>
-            Copy
+          <button className={`${copied?'bg-green-600':'bg-blue-500'} text-white px-4 py-2 rounded-r-2xl`} onClick={inputTextCopyHandler}>
+            {copied? "Copied":"Copy"}
           </button>
         </div>
         <div className="flex items-center justify-center">
