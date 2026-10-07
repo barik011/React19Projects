@@ -8,8 +8,8 @@ function Form() {
       setSkills((prev)=>[...prev,e.target.value])
     }
     else{
-        setSkills((prev)=>[...prev.filter(item=>item!==e.target.value)])
-        //setSkills((skills.filter(item=>item!==e.target.value)))
+        //setSkills((prev)=>[...prev.filter(item=>item!==e.target.value)])
+        setSkills((skills.filter(item=>item!==e.target.value)))
     } 
   }
 

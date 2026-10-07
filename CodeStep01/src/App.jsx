@@ -1,34 +1,19 @@
-import Card from "./Card"
-import Clock from "./Clock"
-import Form from "./Form"
-
+import { useState } from "react"
+import BgDropdown from "./components/BgDropdown"
+import Card from "./components/Card"
+import Clock from "./components/Clock"
+import Form from "./components/Form"
+import { products, collegeData } from './data/products'
+import Colledge from "./components/Colledge"
 
 
 function App() {
-  const products = [
-  {
-    id:1,
-    prod_title:'Mobile',
-    prod_price:24355,
-    prod_desc:'Mobile dummy description data',
-    slug:'mobile'
-  },
-  {
-    id:2,
-    prod_title:'Television',
-    prod_price:30000,
-    prod_desc:'Television dummy description data',
-    slug:'television'
-  },
-  {
-    id:3,
-    prod_title:'Computer System',
-    prod_price:89000,
-    prod_desc:'Computer dummy description data',
-    slug:'computer'
-  }
-]
   
+  
+const [bgColor,setBgColor]=useState('')
+       const bgChangeHandler = (bgclr) =>{
+          setBgColor(bgclr)
+        }
   return (
     <>
       <Form />
@@ -37,9 +22,14 @@ function App() {
          <Card data={prod}/>
       </div>
      ))}
-
-     <Clock />
-      
+     <select onChange={(e)=>bgChangeHandler(e.target.value)}>
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+    </select>
+     <Clock bg={bgColor}/>
+     
+     <Colledge collegedata={collegeData} />
     </>
   )
 }
