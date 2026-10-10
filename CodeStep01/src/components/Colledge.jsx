@@ -2,7 +2,7 @@ import React from 'react'
 
 const Colledge = ({collegedata}) => {
   return (
-    <div>
+    <div className='mx-auto w-1/2'>
         {
         collegedata.map((college,i)=>{
           return(
@@ -14,7 +14,7 @@ const Colledge = ({collegedata}) => {
           
             
               {college.students.map((stud)=>(
-               <ul className="list-disc list-inside" key={stud.roll_no}> 
+               <ul className="list-disc list-inside " key={stud.roll_no}> 
                 <li>{stud.stud_name}</li>
                 <li>{stud.course}</li>
                 </ul>
