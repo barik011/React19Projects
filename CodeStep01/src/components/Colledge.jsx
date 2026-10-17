@@ -2,7 +2,7 @@ import React from 'react'
 
 const Colledge = ({collegedata}) => {
   return (
-    <div className='mx-auto w-1/2 border border-cyan-400'>
+    <div className='mx-auto w-1/2 border border-cyan-400 shadow'>
         {
         collegedata.map((college,i)=>{
           return(
