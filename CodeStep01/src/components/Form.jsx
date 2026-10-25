@@ -13,12 +13,22 @@ function Form() {
     } 
   }
 
-  const [gender,serGender] = useState('female')
-  const handleRadio=(e)=>{
-    serGender(e.target.value)
+
+  const [gender,setGender] = useState('male')
+  // const handleRadio=(e)=>{
+  //   setGender(e.target.value)
+  // }
+
+  const handleRadio = (e) =>{
+    setGender(e.target.value)
+    console.log(e.target.checked)
   }
   
   const [city,setCity]=useState('');
+
+  const handleDropdown = (e)=>{
+    setCity(e.target.value)
+  }
 
   return (
     <div>
@@ -35,17 +45,33 @@ function Form() {
       </div>
       <div className='flex justify-between mx-auto w-2xl border-1 border-gray-300 p-2 mt-2 rounded'>
         <div >
-        <ul>
+        {/* <ul>
           <li><input type="radio" checked={gender=='male'} onChange={handleRadio} value={"male"} name="gender" id="male"  /><label htmlFor="male"/>Male</li>
           <li><input type="radio" checked={gender=='female'} onChange={handleRadio} value={"female"} name="gender" id="female" /><label htmlFor="female"/>Female</li>
+        </ul> */}
+        <ul>
+          <li>
+            <input type="radio" checked={gender=='male'} onChange={handleRadio} name="gender" value="male" id="male"/><label htmlFor="male"> Male</label>
+          </li>
+          <li>
+            <input type="radio" checked={gender=='female'} onChange={handleRadio} name="gender" value="female" id="female"/><label htmlFor="female"> Female</label>
+          </li>
         </ul>
         <div className="gap-5 p-2 font-bold">{gender}</div>
         </div>
         <div >
-          <select defaultValue={"noida"} onChange={(e)=>setCity(e.target.value)}>
+          {/* <select defaultValue={"noida"} onChange={(e)=>setCity(e.target.value)}>
             <option value={"delhi"} >Delhi</option>
             <option value={"noida"}>Noida</option>
             <option value={"gurgeow"}>Gurgeow</option>
+          </select> */}
+
+          <select onChange={handleDropdown}>
+            <option defaultValue="Select Value">Select Value</option>
+            <option value="delhi">Delhi  </option>
+            <option value="up">UP  </option>
+            <option value="bihar">Bihar  </option>
+            <option value="bengal">Bengal  </option>
           </select>
           <div className="float gap-5 p-2 font-bold">{city}</div>
         </div>

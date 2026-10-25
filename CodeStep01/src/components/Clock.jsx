@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const Clock = ({bg}) => {
     const [time,setTime]=useState(new Date().toLocaleTimeString())
-    const [bgColor,setBgColor]=useState('')
+    const [bgColor,setBgColor]=useState('yellow')
     useEffect(()=>{
         setInterval(()=>{
             setTime(new Date().toLocaleTimeString())

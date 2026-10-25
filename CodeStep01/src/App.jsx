@@ -11,9 +11,9 @@ function App() {
   
   
 const [bgColor,setBgColor]=useState('')
-       const bgChangeHandler = (bgclr) =>{
-          setBgColor(bgclr)
-        }
+const bgChangeHandler = (e) =>{
+          setBgColor(e)
+}
   return (
     <>
       <Form />
@@ -22,7 +22,8 @@ const [bgColor,setBgColor]=useState('')
          <Card data={prod}/>
       </div>
      ))}
-     <select onChange={(e)=>bgChangeHandler(e.target.value)}>
+     <select onChange={(e)=>bgChangeHandler(e.target.value)} defaultValue="Select Bg Color">
+      <option value="Select Bg Color" disabled>Select Bg Color</option>
       <option value="green">Green</option>
       <option value="red">Red</option>
       <option value="blue">Blue</option>
