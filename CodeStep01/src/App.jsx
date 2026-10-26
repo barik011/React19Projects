@@ -10,7 +10,7 @@ import Colledge from "./components/Colledge"
 function App() {
   
   
-const [bgColor,setBgColor]=useState('')
+const [bgColor,setBgColor]=useState('yellow')
 const bgChangeHandler = (e) =>{
           setBgColor(e)
 }
